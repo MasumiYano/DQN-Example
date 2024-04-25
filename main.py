@@ -8,7 +8,7 @@ from plot import plot_learning_history
 
 if __name__ == '__main__':
     Transition = namedtuple('Transition', ('state', 'action', 'reward', 'next_state', 'done'))
-    env = gym.make('CartPole-v1')
+    env = gym.make('CartPole-v1', render_mode="human")
     agent = DQNAgent(env)
     state = env.reset()[0]
     state = np.reshape(state, [1, agent.state_size])
